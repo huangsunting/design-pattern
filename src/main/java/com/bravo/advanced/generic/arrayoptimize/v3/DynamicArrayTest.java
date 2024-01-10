@@ -2,7 +2,7 @@ package com.bravo.advanced.generic.arrayoptimize.v3;
 
 import java.util.Arrays;
 
-public class Test {
+public class DynamicArrayTest {
 
     public static void main(String[] args) {
         DynamicArray<String> arr = new DynamicArray<>(3);
