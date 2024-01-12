@@ -1,4 +1,4 @@
-package com.bravo.pattern.factorymethod.product;
+package com.bravo.pattern.simplefactory.product;
 
 public class BProduct extends AbstractProduct {
 
