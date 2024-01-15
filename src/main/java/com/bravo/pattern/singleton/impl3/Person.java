@@ -4,7 +4,6 @@ public class Person {
 
     private final String name;
 
-    // 私有构造器，防止外界new
     private Person(String name) {
         this.name = name;
     }
