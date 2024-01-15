@@ -1,7 +1,6 @@
-package com.bravo.pattern.factorybean;
+package com.bravo.pattern.factorymethod.factorybean;
 
 
-import com.bravo.pattern.factorymethod.factorybean.MyBean;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

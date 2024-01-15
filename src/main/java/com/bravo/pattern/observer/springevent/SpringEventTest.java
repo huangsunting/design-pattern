@@ -1,6 +1,5 @@
-package com.bravo.pattern.springevent;
+package com.bravo.pattern.observer.springevent;
 
-import com.bravo.pattern.observer.springevent.ApplicationContext;
 import com.bravo.pattern.observer.springevent.event.OrderCompletedEvent;
 import com.bravo.pattern.observer.springevent.listener.ErpService;
 import com.bravo.pattern.observer.springevent.listener.SmsService;
@@ -12,7 +11,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
-public class EventTest {
+public class SpringEventTest {
 
     // 依赖ApplicationContext
     private final ApplicationContext applicationContext = new ApplicationContext();
