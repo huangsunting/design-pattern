@@ -22,6 +22,10 @@ public class BizResult implements Result {
         return PASS;
     }
 
+    public static BizResult fail(String errMsg) {
+        return new BizResult(false, errMsg);
+    }
+
     @Override
     public boolean isPass() {
         return isPass;

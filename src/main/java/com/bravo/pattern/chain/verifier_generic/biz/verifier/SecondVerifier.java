@@ -11,7 +11,7 @@ public class SecondVerifier implements Verifier<BizRequest, BizResult> {
     @Override
     public BizResult verify(BizRequest request) {
         System.out.println("SecondVerifier");
-        return new BizResult(false, "SecondVerifier校验失败");
+        return BizResult.fail("SecondVerifier校验失败");
     }
 
 }
