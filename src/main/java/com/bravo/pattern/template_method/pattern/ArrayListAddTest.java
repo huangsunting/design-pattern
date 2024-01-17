@@ -1,4 +1,4 @@
-package com.bravo.pattern.templatemethod.pattern;
+package com.bravo.pattern.template_method.pattern;
 
 import java.util.ArrayList;
 

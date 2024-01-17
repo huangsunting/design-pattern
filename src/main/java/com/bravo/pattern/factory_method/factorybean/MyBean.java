@@ -1,4 +1,4 @@
-package com.bravo.pattern.factorymethod.factorybean;
+package com.bravo.pattern.factory_method.factorybean;
 
 public class MyBean {
 

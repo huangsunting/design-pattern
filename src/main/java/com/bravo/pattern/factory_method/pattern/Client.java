@@ -1,7 +1,7 @@
-package com.bravo.pattern.factorymethod.pattern;
+package com.bravo.pattern.factory_method.pattern;
 
-import com.bravo.pattern.factorymethod.pattern.factory.AbstractFactory;
-import com.bravo.pattern.factorymethod.pattern.product.AbstractProduct;
+import com.bravo.pattern.factory_method.pattern.factory.AbstractFactory;
+import com.bravo.pattern.factory_method.pattern.product.AbstractProduct;
 
 public class Client {
 

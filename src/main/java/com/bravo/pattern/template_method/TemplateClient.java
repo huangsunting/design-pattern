@@ -1,7 +1,7 @@
-package com.bravo.pattern.templatemethod;
+package com.bravo.pattern.template_method;
 
 
-import com.bravo.pattern.templatemethod.pattern.ArrayListAddTest;
+import com.bravo.pattern.template_method.pattern.ArrayListAddTest;
 
 public class TemplateClient {
 

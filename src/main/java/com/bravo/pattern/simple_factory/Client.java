@@ -1,7 +1,7 @@
-package com.bravo.pattern.simplefactory;
+package com.bravo.pattern.simple_factory;
 
 
-import com.bravo.pattern.simplefactory.product.AbstractProduct;
+import com.bravo.pattern.simple_factory.product.AbstractProduct;
 
 public class Client {
 

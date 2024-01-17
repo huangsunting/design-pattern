@@ -1,4 +1,4 @@
-package com.bravo.pattern.abstractfactory;
+package com.bravo.pattern.abstract_factory;
 
 /**
  * 抽象工厂模式：找不到合适的案例，只能用伪代码讲解。请看小册。

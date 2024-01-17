@@ -1,9 +1,9 @@
-package com.bravo.pattern.simplefactory;
+package com.bravo.pattern.simple_factory;
 
 
-import com.bravo.pattern.simplefactory.product.AProduct;
-import com.bravo.pattern.simplefactory.product.AbstractProduct;
-import com.bravo.pattern.simplefactory.product.BProduct;
+import com.bravo.pattern.simple_factory.product.AProduct;
+import com.bravo.pattern.simple_factory.product.AbstractProduct;
+import com.bravo.pattern.simple_factory.product.BProduct;
 
 public class SimpleFactory {
 
