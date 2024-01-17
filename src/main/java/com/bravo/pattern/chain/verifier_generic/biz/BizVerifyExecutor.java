@@ -1,7 +1,7 @@
 package com.bravo.pattern.chain.verifier_generic.biz;
 
 import com.bravo.pattern.chain.verifier_generic.biz.support.BizRequest;
-import com.bravo.pattern.chain.verifier_generic.biz.support.BizResult;
+import com.bravo.pattern.chain.verifier_generic.jar.Result;
 import com.bravo.pattern.chain.verifier_generic.biz.verifier.FirstVerifier;
 import com.bravo.pattern.chain.verifier_generic.biz.verifier.SecondVerifier;
 import com.bravo.pattern.chain.verifier_generic.jar.VerifyChainExecutor;
@@ -18,8 +18,8 @@ public class BizVerifyExecutor {
     private BeanFactory beanFactory;
 
     @Bean
-    public VerifyChainExecutor<BizRequest, BizResult> bizVerifyChainExecutor() {
-        return VerifyChainExecutor.<BizRequest, BizResult>builder()
+    public VerifyChainExecutor<BizRequest, Result> bizVerifyChainExecutor() {
+        return VerifyChainExecutor.<BizRequest, Result>builder()
                 .add(beanFactory.getBean(FirstVerifier.class))
                 .add(beanFactory.getBean(SecondVerifier.class))
                 .build();

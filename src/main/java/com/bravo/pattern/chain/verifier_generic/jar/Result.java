@@ -1,8 +1,27 @@
 package com.bravo.pattern.chain.verifier_generic.jar;
 
-public interface Result {
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
-    boolean isPass();
+@Data
+@AllArgsConstructor
+public class Result {
 
-    String getErrMsg();
+    private boolean isPass;
+
+    private String errMsg;
+
+    private final static Result PASS;
+
+    static {
+        PASS = new Result(true, null);
+    }
+
+    public static Result pass() {
+        return PASS;
+    }
+
+    public static Result fail(String errMsg) {
+        return new Result(false, errMsg);
+    }
 }
