@@ -1,10 +1,10 @@
-package com.bravo.pattern.iterator;
+package com.bravo.pattern.iterator.pattern;
 
 
-import com.bravo.pattern.iterator.container.ArrayList;
-import com.bravo.pattern.iterator.container.BinarySearchTree;
-import com.bravo.pattern.iterator.container.LinkedList;
-import com.bravo.pattern.iterator.iterator.Iterator;
+import com.bravo.pattern.iterator.pattern.container.ArrayList;
+import com.bravo.pattern.iterator.pattern.container.BinarySearchTree;
+import com.bravo.pattern.iterator.pattern.container.LinkedList;
+import com.bravo.pattern.iterator.pattern.iterator.Iterator;
 
 
 public class IteratorTest {
@@ -35,6 +35,7 @@ public class IteratorTest {
         // 未来可能新增的容器...
     }
 
+    // 共同的行为抽象：Iterator
     public static boolean search(Iterator<?> iterator, Object targetItem) {
         while (iterator.hasNext()) {
             if (iterator.next().equals(targetItem)) {

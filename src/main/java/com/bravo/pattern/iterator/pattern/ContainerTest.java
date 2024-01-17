@@ -1,8 +1,8 @@
-package com.bravo.pattern.iterator;
+package com.bravo.pattern.iterator.pattern;
 
 
-import com.bravo.pattern.iterator.container.ArrayList;
-import com.bravo.pattern.iterator.container.LinkedList;
+import com.bravo.pattern.iterator.pattern.container.ArrayList;
+import com.bravo.pattern.iterator.pattern.container.LinkedList;
 
 public class ContainerTest {
 
@@ -15,6 +15,7 @@ public class ContainerTest {
     }
 
     public static boolean search(Object dataList, Object targetItem) {
+        // 如果ArrayList和LinkedList没有共同的行为抽象（Iterator），就要通过if-else做类型判断
         if (dataList instanceof ArrayList) {
             ArrayList<?> arrayList = (ArrayList<?>) dataList;
             for (int i = 0; i < arrayList.size(); i++) {

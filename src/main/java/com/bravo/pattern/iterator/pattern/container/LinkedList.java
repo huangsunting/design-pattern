@@ -1,7 +1,7 @@
-package com.bravo.pattern.iterator.container;
+package com.bravo.pattern.iterator.pattern.container;
 
-import com.bravo.pattern.iterator.iterator.Iterable;
-import com.bravo.pattern.iterator.iterator.Iterator;
+import com.bravo.pattern.iterator.pattern.iterator.Iterable;
+import com.bravo.pattern.iterator.pattern.iterator.Iterator;
 
 import java.util.NoSuchElementException;
 

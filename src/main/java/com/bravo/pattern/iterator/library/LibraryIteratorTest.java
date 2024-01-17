@@ -6,6 +6,7 @@ import java.util.List;
 public class LibraryIteratorTest {
 
     public static void main(String[] args) {
+        // 将迭代器模式应用于一个复杂的对象
         Library library = new Library();
         library.addBook(new Book("Book 1"));
         library.addBook(new Book("Book 2"));
