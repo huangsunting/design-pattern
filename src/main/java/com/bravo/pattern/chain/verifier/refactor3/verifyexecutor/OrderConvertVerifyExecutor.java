@@ -2,20 +2,24 @@ package com.bravo.pattern.chain.verifier.refactor3.verifyexecutor;
 
 import com.bravo.pattern.chain.verifier.refactor3.support.OrderConvertRequest;
 import com.bravo.pattern.chain.verifier.refactor3.support.Result;
-import com.bravo.pattern.chain.verifier.refactor3.verifychain.DouYinOrderConvertVerifyChain;
 import com.bravo.pattern.chain.verifier.refactor3.verifychain.OrderConvertVerifyChain;
-import com.bravo.pattern.chain.verifier.refactor3.verifychain.TaoBaoOrderConvertVerifyChain;
-import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.BeanFactoryAware;
 import org.springframework.stereotype.Component;
 
-import java.util.Arrays;
+import javax.annotation.Resource;
 import java.util.List;
 
+/**
+ * VerifyChain：渠道内
+ * VerifyExecutor：跨渠道
+ *
+ * 为什么VerifyChain用BeanFactoryAware注入Bean，而VerifyExecutor用Resource注入Bean？
+ * 因为VerifyChain负责组装各个渠道内的校验逻辑，既有公共逻辑，又有渠道特有的逻辑，需要精细化操作，最好手动指定。
+ * 而VerifyExecutor负责组装跨渠道的校验逻辑，每个渠道只有一个，直接注入即可。
+ */
 @Component("orderConvertVerifyExecutorRefactor3")
-public class OrderConvertVerifyExecutor implements BeanFactoryAware {
+public class OrderConvertVerifyExecutor {
 
+    @Resource
     private List<OrderConvertVerifyChain> orderConvertVerifyChains;
 
     public Result verify(OrderConvertRequest request) {
@@ -26,13 +30,5 @@ public class OrderConvertVerifyExecutor implements BeanFactoryAware {
             }
         }
         throw new RuntimeException("渠道暂未接入");
-    }
-
-    @Override
-    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-        this.orderConvertVerifyChains = Arrays.asList(
-                beanFactory.getBean(TaoBaoOrderConvertVerifyChain.class),
-                beanFactory.getBean(DouYinOrderConvertVerifyChain.class)
-        );
     }
 }
