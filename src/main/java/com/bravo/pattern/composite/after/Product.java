@@ -3,6 +3,9 @@ package com.bravo.pattern.composite.after;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+/**
+ * 叶子节点
+ */
 @Getter
 @AllArgsConstructor
 public class Product implements BoxComponent { // 实现BoxComponent
