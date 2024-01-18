@@ -3,13 +3,13 @@ package com.bravo.pattern.chain.verifier_generic.jar;
 import java.util.ArrayList;
 import java.util.List;
 
-public class VerifierChainBuilder<I, O extends Result> {
+public class VerifyChainBuilder<I, O extends Result> {
     private final List<Verifier<I, O>> verifiers = new ArrayList<>();
 
-    VerifierChainBuilder() {
+    VerifyChainBuilder() {
     }
 
-    public VerifierChainBuilder<I, O> add(final Verifier<I, O> verifier) {
+    public VerifyChainBuilder<I, O> add(final Verifier<I, O> verifier) {
         verifiers.add(verifier);
         return this;
     }

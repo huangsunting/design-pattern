@@ -11,11 +11,7 @@ public class Result {
 
     private String errMsg;
 
-    private final static Result PASS;
-
-    static {
-        PASS = new Result(true, null);
-    }
+    private final static Result PASS = new Result(true, null);
 
     public static Result pass() {
         return PASS;

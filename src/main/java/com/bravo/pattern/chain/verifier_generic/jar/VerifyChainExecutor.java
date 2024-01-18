@@ -22,7 +22,7 @@ public class VerifyChainExecutor<I, O extends Result> {
         return result;
     }
 
-    public static <I, O extends Result> VerifierChainBuilder<I, O> builder() {
-        return new VerifierChainBuilder<>();
+    public static <I, O extends Result> VerifyChainBuilder<I, O> builder() {
+        return new VerifyChainBuilder<>();
     }
 }
