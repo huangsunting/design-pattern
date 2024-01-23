@@ -16,14 +16,14 @@ public class VisitorMath implements Visitor {
     }
 
     public void visit(AddExpression expression) {
-        expression.left.accept(this);
+        expression.getLeft().accept(this);
         sb.append("+");
-        expression.right.accept(this);
+        expression.getRight().accept(this);
     }
 
     public void visit(SubtractExpression expression) {
-        expression.left.accept(this);
+        expression.getLeft().accept(this);
         sb.append("-");
-        expression.right.accept(this);
+        expression.getRight().accept(this);
     }
 }

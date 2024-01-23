@@ -1,11 +1,14 @@
 package com.bravo.pattern.visitor.expression_visitor.expression;
 
 import com.bravo.pattern.visitor.expression_visitor.visitor.Visitor;
+import lombok.Getter;
 
 public class AddExpression implements Expression {
-    // public权限，这样Visitor才能访问
-    public final Expression left;
-    public final Expression right;
+    // 提供getter，这样Visitor才能访问
+    @Getter
+    private final Expression left;
+    @Getter
+    private final Expression right;
 
     public AddExpression(Expression left, Expression right) {
         this.left = left;

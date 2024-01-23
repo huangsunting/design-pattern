@@ -22,14 +22,14 @@ public class VisitorJapanese implements Visitor {
     }
 
     public void visit(AddExpression expression) {
-        expression.left.accept(this);
+        expression.getLeft().accept(this);
         sb.append("足す");
-        expression.right.accept(this);
+        expression.getRight().accept(this);
     }
 
     public void visit(SubtractExpression expression) {
-        expression.left.accept(this);
+        expression.getLeft().accept(this);
         sb.append("引く");
-        expression.right.accept(this);
+        expression.getRight().accept(this);
     }
 }

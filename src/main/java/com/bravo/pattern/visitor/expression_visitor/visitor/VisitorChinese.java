@@ -21,14 +21,14 @@ public class VisitorChinese implements Visitor {
     }
 
     public void visit(AddExpression expression) {
-        expression.left.accept(this);
+        expression.getLeft().accept(this);
         sb.append("加");
-        expression.right.accept(this);
+        expression.getRight().accept(this);
     }
 
     public void visit(SubtractExpression expression) {
-        expression.left.accept(this);
+        expression.getLeft().accept(this);
         sb.append("减");
-        expression.right.accept(this);
+        expression.getRight().accept(this);
     }
 }
