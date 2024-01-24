@@ -1,6 +1,6 @@
-package com.bravo.pattern.interpreter.sqlbuilder;
+package com.bravo.pattern.interpreter.ext.sqlbuilder;
 
-public class SqlTest {
+public class SqlExpressionBuilderTest {
 
     public static void main(String[] args) {
         String sql = SqlExpression.builder()

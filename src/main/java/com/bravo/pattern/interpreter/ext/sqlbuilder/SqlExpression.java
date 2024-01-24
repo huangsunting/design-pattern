@@ -1,4 +1,4 @@
-package com.bravo.pattern.interpreter.sqlbuilder;
+package com.bravo.pattern.interpreter.ext.sqlbuilder;
 
 public class SqlExpression {
     private final String sql;
