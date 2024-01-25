@@ -1,21 +1,21 @@
 [《设计模式那些事儿》](https://zhuanlan.zhihu.com/p/661886277)配套代码
 
-<img src="https://picx.zhimg.com/v2-a7907f0d90d27deabff8b7616562df30" width = "200" height = "200" alt="图片名称" align=center />
+<img src="https://picx.zhimg.com/v2-a7907f0d90d27deabff8b7616562df30" width = "200" height = "200" alt="图片名称"/>
 
 ## 目录
 
 - 序
 - 更新日志
 - Java基础
+    - [this与对象](https://www.yuque.com/bravo1988/design-pattern/vfev4l?singleDo)
     - static与final
-    - this与对象
-    - 注解：程序上的标签
-    - 泛型（上）：类型模板
+    - [注解：程序上的标签](https://www.yuque.com/bravo1988/design-pattern/bwy2h987c2vsfy30?singleDoc)
+    - [泛型（上）：类型模板](https://www.yuque.com/bravo1988/design-pattern/humtol?singleDoc)
     - 泛型（下）：通配符与类型限制
     - 反射机制：通用设计的底层支撑
     - 线程池：Thread+阻塞队列+循环
     - 函数式编程（上）：概念与特性
-    - 函数式编程（下）：Stream API
+    - [函数式编程（下）：Stream API](https://www.yuque.com/bravo1988/design-pattern/kb201ebylq38p1al?singleDoc)
 - 面向对象
     - 编程语言简史
     - 人类如何处理复杂事物
@@ -26,8 +26,8 @@
 - 常见模式
     - 模式概览
     - 对象创建
-        - Simple Factory
-        - Factory Method
+        - [Simple Factory](https://www.yuque.com/bravo1988/design-pattern/upy3ae0r7ac08a3u?singleDoc)
+        - [Factory Method](https://www.yuque.com/bravo1988/design-pattern/kymtng91m0zkbxxz?singleDoc)
         - Abstract Factory
         - Builder(1)
         - Builder(2)
@@ -39,35 +39,35 @@
     - 组件协作
         - Template Method
         - Strategy
-        - Observer
+        - [Observer](https://www.yuque.com/bravo1988/design-pattern/wi0ltyotz22v65l9?singleDoc)
         - 小结
     - 数据结构
         - Iterator
         - Composite
-        - Chain of Responsibility(3)
-        - Chain of Responsibility(2)
         - Chain of Responsibility(1)
+        - Chain of Responsibility(2)
+        - Chain of Responsibility(3)
         - 小结
     - 单一职责
-        - Decorator
+        - [Decorator](https://www.yuque.com/bravo1988/design-pattern/vrc5gg85omihc7di?singleDoc)
         - Bridge
     - 接口隔离
         - Facade
         - Mediator
-        - Proxy
+        - [Proxy](https://www.yuque.com/bravo1988/design-pattern/cun86ak7a7grrql8?singleDoc)
         - Adapter
         - 小结
     - 行为变化
         - Command
-        - Visitor（2）
         - Visitor（1）
+        - Visitor（2）
         - 小结
     - 状态变化
         - Memento
         - State
         - 小结
     - 领域问题
-        - Interpreter
+        - [Interpreter](https://www.yuque.com/bravo1988/design-pattern/letha5lory64xilv?singleDoc)
     - 其他模式
         - Lazy Loading
         - Null Object
@@ -75,6 +75,7 @@
 - 参考文献
 
 ## 插图
+
 ![img1.png](https://pic1.zhimg.com/v2-fca63bd45a40d7d9671c7c58670cdec0_r.jpg)
 
 ![img2.png](https://pic3.zhimg.com/80/v2-f0511e52f0957be1065e775778a3d34e_1440w.webp)
@@ -86,6 +87,7 @@
 ![img5.png](https://pic3.zhimg.com/v2-926ee830bebb4bd8eabd7e5e1f91a0fa_r.jpg)
 
 ## 代码片段
+
 ![img6.png](https://pic3.zhimg.com/v2-edf92d2dbf1c8962d12f72875f6eca8a_r.jpg)
 
 ![img7.png](https://pic4.zhimg.com/v2-e31965d75a4ea79c778627a8ac0b51c3_r.jpg)
