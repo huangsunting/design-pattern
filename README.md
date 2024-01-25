@@ -1,5 +1,7 @@
 [《设计模式那些事儿》](https://zhuanlan.zhihu.com/p/661886277)配套代码
 
+<img src="https://picx.zhimg.com/v2-a7907f0d90d27deabff8b7616562df30" width = "200" height = "200" alt="图片名称" align=center />
+
 ## 目录
 
 - 序
