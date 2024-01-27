@@ -1,7 +1,9 @@
 package com.bravo.pattern.factory_method.factorybean;
 
 import org.springframework.beans.factory.FactoryBean;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MyBeanFactory implements FactoryBean<MyBean> {
 
     @Override
