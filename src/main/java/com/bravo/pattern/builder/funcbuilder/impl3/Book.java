@@ -38,10 +38,10 @@ public class Book {
     }
 
     public interface AuthorAdder {
-        titleAdder addAuthor(String author);
+        TitleAdder addAuthor(String author);
     }
 
-    public interface titleAdder {
+    public interface TitleAdder {
         LocalDateAdder addTitle(String title);
     }
 
