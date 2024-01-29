@@ -28,18 +28,20 @@
     - 对象创建
         - [Simple Factory](https://www.yuque.com/bravo1988/design-pattern/upy3ae0r7ac08a3u?singleDoc)
         - [Factory Method](https://www.yuque.com/bravo1988/design-pattern/kymtng91m0zkbxxz?singleDoc)
-        - Abstract Factory
-        - Builder(1)
-        - Builder(2)
+        - [Abstract Factory](https://www.yuque.com/bravo1988/design-pattern/syu7q3so655yuiey?singleDoc)
+        - [Builder(1)](https://www.yuque.com/bravo1988/design-pattern/rf3rkfxp41tsl8gw?singleDoc)
+        - [Builder(2)](https://www.yuque.com/bravo1988/design-pattern/ewi5v8zk9rharlbu?singleDoc)
         - Builder(3)
-        - Prototype
+        - [Prototype](https://www.yuque.com/bravo1988/design-pattern/ewi5v8zk9rharlbu?singleDoc)
+        - 小结
     - 对象性能
         - Flyweight
         - Singleton
+        - 小结
     - 组件协作
         - Template Method
         - Strategy
-        - [Observer](https://www.yuque.com/bravo1988/design-pattern/wi0ltyotz22v65l9?singleDoc)
+        - Observer
         - 小结
     - 数据结构
         - Iterator
@@ -49,12 +51,13 @@
         - Chain of Responsibility(3)
         - 小结
     - 单一职责
-        - [Decorator](https://www.yuque.com/bravo1988/design-pattern/vrc5gg85omihc7di?singleDoc)
+        - Decorator
         - Bridge
+        - 小结
     - 接口隔离
         - Facade
         - Mediator
-        - [Proxy](https://www.yuque.com/bravo1988/design-pattern/cun86ak7a7grrql8?singleDoc)
+        - Proxy
         - Adapter
         - 小结
     - 行为变化
@@ -67,7 +70,7 @@
         - State
         - 小结
     - 领域问题
-        - [Interpreter](https://www.yuque.com/bravo1988/design-pattern/letha5lory64xilv?singleDoc)
+        - Interpreter
     - 其他模式
         - Lazy Loading
         - Null Object
