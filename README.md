@@ -33,7 +33,7 @@
         - [Builder(2)](https://www.yuque.com/bravo1988/design-pattern/ewi5v8zk9rharlbu?singleDoc)
         - [Builder(3)]((https://www.yuque.com/bravo1988/design-pattern/ewi5v8zk9rharlbu?singleDoc))
         - Prototype
-        - 小结
+        - [小结](https://www.yuque.com/bravo1988/design-pattern/emm28pv8z10btolq?singleDoc)
     - 对象性能
         - Flyweight
         - Singleton
