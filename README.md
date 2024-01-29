@@ -31,8 +31,8 @@
         - [Abstract Factory](https://www.yuque.com/bravo1988/design-pattern/syu7q3so655yuiey?singleDoc)
         - [Builder(1)](https://www.yuque.com/bravo1988/design-pattern/rf3rkfxp41tsl8gw?singleDoc)
         - [Builder(2)](https://www.yuque.com/bravo1988/design-pattern/ewi5v8zk9rharlbu?singleDoc)
-        - Builder(3)
-        - [Prototype](https://www.yuque.com/bravo1988/design-pattern/ewi5v8zk9rharlbu?singleDoc)
+        - [Builder(3)]((https://www.yuque.com/bravo1988/design-pattern/ewi5v8zk9rharlbu?singleDoc))
+        - Prototype
         - 小结
     - 对象性能
         - Flyweight
