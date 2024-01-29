@@ -1,13 +1,14 @@
-package com.bravo.pattern.iterator.split;
+package com.bravo.pattern.iterator.v3.iterator;
 
-import com.bravo.pattern.iterator.pattern.iterator.Iterator;
+import com.bravo.pattern.iterator.v3.container.Node;
+import com.bravo.pattern.iterator.v3.container.BinarySearchTree;
 
 import java.util.Stack;
 
 public class InOrderIterator<E extends Comparable<E>> implements Iterator<E> {
     private final Stack<Node<E>> stack;
 
-    public InOrderIterator(SimpleBinarySearchTree<E> tree) {
+    public InOrderIterator(BinarySearchTree<E> tree) {
         stack = new Stack<>();
         pushLeft(tree.getRoot());
     }

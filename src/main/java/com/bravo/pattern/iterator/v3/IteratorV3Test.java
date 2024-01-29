@@ -1,10 +1,16 @@
-package com.bravo.pattern.iterator.split;
+package com.bravo.pattern.iterator.v3;
 
 
-public class SplitIteratorTest {
+import com.bravo.pattern.iterator.v3.container.BinarySearchTree;
+import com.bravo.pattern.iterator.v3.iterator.InOrderIterator;
+
+/**
+ * 独立的迭代器：将容器注入到迭代器中
+ */
+public class IteratorV3Test {
 
     public static void main(String[] args) {
-        SimpleBinarySearchTree<Integer> tree = new SimpleBinarySearchTree<>();
+        BinarySearchTree<Integer> tree = new BinarySearchTree<>();
         tree.insert(5);
         tree.insert(3);
         tree.insert(8);
@@ -12,7 +18,7 @@ public class SplitIteratorTest {
         tree.insert(2);
         tree.insert(6);
         tree.insert(9);
-        // 组合容器与迭代器
+
         InOrderIterator<Integer> iterator = new InOrderIterator<>(tree);
         while (iterator.hasNext()) {
             System.out.println(iterator.next());

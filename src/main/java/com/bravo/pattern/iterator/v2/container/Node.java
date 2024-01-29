@@ -1,6 +1,7 @@
-package com.bravo.pattern.iterator.split;
+package com.bravo.pattern.iterator.v2.container;
 
 public class Node<E> {
+    // public，需要暴露实现
     public E data;
     public Node<E> left;
     public Node<E> right;

@@ -1,13 +1,16 @@
-package com.bravo.pattern.iterator.pattern;
+package com.bravo.pattern.iterator.v1;
 
 
-import com.bravo.pattern.iterator.pattern.container.ArrayList;
-import com.bravo.pattern.iterator.pattern.container.BinarySearchTree;
-import com.bravo.pattern.iterator.pattern.container.LinkedList;
-import com.bravo.pattern.iterator.pattern.iterator.Iterator;
+import com.bravo.pattern.iterator.v1.container.ArrayList;
+import com.bravo.pattern.iterator.v1.container.BinarySearchTree;
+import com.bravo.pattern.iterator.v1.container.LinkedList;
+import com.bravo.pattern.iterator.v1.iterator.Iterator;
 
 
-public class IteratorTest {
+/**
+ * 内部类实现迭代器
+ */
+public class IteratorV1Test {
 
     public static void main(String[] args) {
         ArrayList<String> arrayList = new ArrayList<>();

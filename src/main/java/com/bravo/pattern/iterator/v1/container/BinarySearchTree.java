@@ -1,7 +1,7 @@
-package com.bravo.pattern.iterator.pattern.container;
+package com.bravo.pattern.iterator.v1.container;
 
-import com.bravo.pattern.iterator.pattern.iterator.Iterable;
-import com.bravo.pattern.iterator.pattern.iterator.Iterator;
+import com.bravo.pattern.iterator.v1.iterator.Iterable;
+import com.bravo.pattern.iterator.v1.iterator.Iterator;
 
 import java.util.Stack;
 

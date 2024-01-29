@@ -1,16 +1,15 @@
-package com.bravo.pattern.iterator.split;
+package com.bravo.pattern.iterator.v3.container;
 
 import lombok.Getter;
 
-public class SimpleBinarySearchTree<E extends Comparable<E>> {
+public class BinarySearchTree<E extends Comparable<E>> {
     /**
-     * 拆分容器与迭代器的弊端：
      * 为了让迭代器能够遍历容器内部的元素，需要将root节点暴露出去，这破坏了容器的封装性
      */
     @Getter
     private Node<E> root;
 
-    public SimpleBinarySearchTree() {
+    public BinarySearchTree() {
         root = null;
     }
 
