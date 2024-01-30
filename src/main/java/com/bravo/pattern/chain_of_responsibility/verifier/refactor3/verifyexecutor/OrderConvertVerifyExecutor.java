@@ -9,12 +9,13 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * VerifyChain：渠道内
- * VerifyExecutor：跨渠道
+ * VerifyExecutor是什么？
+ * - 第一个层次：Verifier，独立的校验逻辑
+ * - 第二个层次：VerifyChain，同一渠道下串联的多个校验逻辑
+ * - 第三个层次：VerifyExecutor，业务接口的校验逻辑，包含多渠道（淘宝、抖音...）
  *
- * 为什么VerifyChain用BeanFactoryAware注入Bean，而VerifyExecutor用Resource注入Bean？
- * 因为VerifyChain负责组装各个渠道内的校验逻辑，既有公共逻辑，又有渠道特有的逻辑，需要精细化操作，最好手动指定。
- * 而VerifyExecutor负责组装跨渠道的校验逻辑，每个渠道只有一个，直接注入即可。
+ * 前端请求的统一入口是OrderConvertService#convert，内部依赖VerifyExecutor进行业务校验。
+ * request ==> OrderConvertService#convert ==> VerifyExecutor#verify（渠道匹配） ==> VerifyChain#verify（渠道校验）
  */
 @Component("orderConvertVerifyExecutorRefactor3")
 public class OrderConvertVerifyExecutor {
