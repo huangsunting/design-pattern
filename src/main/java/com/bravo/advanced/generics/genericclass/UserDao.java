@@ -1,4 +1,4 @@
-package com.bravo.advanced.generic.genericclass;
+package com.bravo.advanced.generics.genericclass;
 
 /**
  * 严格来说，UserDao本身并没有直接声明泛型参数，所以它不能被称为 泛型类（Generic Class）。

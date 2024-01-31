@@ -1,4 +1,4 @@
-package com.bravo.advanced.generic.wildcard;
+package com.bravo.advanced.generics.wildcard;
 
 import lombok.Getter;
 

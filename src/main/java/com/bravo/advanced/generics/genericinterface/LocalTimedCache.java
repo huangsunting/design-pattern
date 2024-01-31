@@ -1,4 +1,4 @@
-package com.bravo.advanced.generic.genericinterface;
+package com.bravo.advanced.generics.genericinterface;
 
 
 import cn.hutool.core.lang.Pair;

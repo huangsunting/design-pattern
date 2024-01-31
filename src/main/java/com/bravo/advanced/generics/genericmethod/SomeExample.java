@@ -1,4 +1,4 @@
-package com.bravo.advanced.generic.genericmethod;
+package com.bravo.advanced.generics.genericmethod;
 
 import java.util.Objects;
 

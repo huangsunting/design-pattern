@@ -1,4 +1,4 @@
-package com.bravo.advanced.generic.genericclass;
+package com.bravo.advanced.generics.genericclass;
 
 /**
  * 泛型类

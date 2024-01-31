@@ -1,4 +1,4 @@
-package com.bravo.advanced.generic.arrayoptimize.v1;
+package com.bravo.advanced.generics.arrayoptimize.v1;
 
 import java.util.Arrays;
 

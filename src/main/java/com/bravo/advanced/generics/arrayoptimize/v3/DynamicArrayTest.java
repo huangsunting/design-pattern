@@ -1,11 +1,11 @@
-package com.bravo.advanced.generic.arrayoptimize.v2;
+package com.bravo.advanced.generics.arrayoptimize.v3;
 
 import java.util.Arrays;
 
-public class DynamicStringArrayTest {
+public class DynamicArrayTest {
 
     public static void main(String[] args) {
-        DynamicStringArray arr = new DynamicStringArray(3);
+        DynamicArray<String> arr = new DynamicArray<>(3);
         arr.add("a");
         arr.add("b");
         arr.add("c");
@@ -14,26 +14,26 @@ public class DynamicStringArrayTest {
         System.out.println(arr); // [a, b, c, d, null, null]
     }
 
-    static class DynamicStringArray {
-        private String[] arr;
-        private int size = 0; // 记录当前数组实际长度
+    static class DynamicArray<T> {
+        private Object[] arr;
+        private int size = 0;
 
-        public DynamicStringArray(int initialCapacity) {
-            this.arr = new String[initialCapacity]; // 数组容量
+        public DynamicArray(int initialCapacity) {
+            this.arr = new Object[initialCapacity];
         }
 
-        public String get(int index) {
-            return arr[index];
+        @SuppressWarnings("unchecked")
+        public T get(int index) {
+            return (T) arr[index];
         }
 
-        public void add(String str) {
+        public void add(T str) {
             ensureCapacity(size + 1);
-            arr[size++] = str; // 这里先执行arr[size]=str，然后size++
+            arr[size++] = str;
         }
 
         private void ensureCapacity(int minCapacity) {
             if (minCapacity > arr.length) {
-                // 双倍扩容
                 int newCapacity = arr.length * 2;
                 arr = Arrays.copyOf(arr, newCapacity);
             }
