@@ -4,7 +4,7 @@
 
 ## 目录
 
-- 序
+- [序](https://www.yuque.com/bravo1988/design-pattern/wiq0czyfp1gcc5xl?singleDoc)
 - 更新日志
 - Java基础
     - [this与对象](https://www.yuque.com/bravo1988/design-pattern/vfev4l?singleDo)
