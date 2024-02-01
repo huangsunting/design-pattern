@@ -14,7 +14,7 @@ public class DoubleDispatchTest {
         Father man = new Son();
 
         // 动态分派
-        man.say();          // 方法重写（Son实例）：say in Son
+        man.say();           // 方法重写（Son实例）：say in Son
 
         // 静态分派
         PrinterA printerA = new PrinterA();
