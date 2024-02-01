@@ -14,7 +14,7 @@
     - 泛型（下）：通配符与类型限制
     - 反射机制：通用设计的底层支撑
     - 线程池：Thread+阻塞队列+循环
-    - 函数式编程（上）：概念与特性
+    - [函数式编程（上）：概念与特性](https://www.yuque.com/bravo1988/design-pattern/vgldl1?singleDoc)
     - [函数式编程（下）：Stream API](https://www.yuque.com/bravo1988/design-pattern/kb201ebylq38p1al?singleDoc)
 - 面向对象
     - 编程语言简史
@@ -31,7 +31,7 @@
         - [Abstract Factory](https://www.yuque.com/bravo1988/design-pattern/syu7q3so655yuiey?singleDoc)
         - [Builder(1)](https://www.yuque.com/bravo1988/design-pattern/rf3rkfxp41tsl8gw?singleDoc)
         - [Builder(2)](https://www.yuque.com/bravo1988/design-pattern/ewi5v8zk9rharlbu?singleDoc)
-        - [Builder(3)]((https://www.yuque.com/bravo1988/design-pattern/ewi5v8zk9rharlbu?singleDoc))
+        - [Builder(3)](https://www.yuque.com/bravo1988/design-pattern/gbxruulgqxwfzgah?singleDoc)
         - Prototype
         - [小结](https://www.yuque.com/bravo1988/design-pattern/emm28pv8z10btolq?singleDoc)
     - 对象性能
