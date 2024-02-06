@@ -67,7 +67,7 @@ public class ApplicationContext {
         return this.taskExecutor;
     }
 
-    public void setTaskExecutor(Executor executor) {
+    public void setTaskExecutor(@Nullable Executor executor) {
         this.taskExecutor = executor;
     }
 
