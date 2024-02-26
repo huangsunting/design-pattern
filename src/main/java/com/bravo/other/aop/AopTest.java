@@ -1,6 +1,8 @@
 package com.bravo.other.aop;
 
 
+import org.junit.jupiter.api.Test;
+
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -15,7 +17,8 @@ import java.util.List;
  */
 public class AopTest {
 
-    public static void main(String[] args) {
+    @Test
+    public void test() {
         // 这是增强逻辑
         List<MethodInterceptor> chain = buildInterceptorChain();
         // 这是目标对象
@@ -26,7 +29,7 @@ public class AopTest {
         proxy.sayHello();
     }
 
-    private static Object getProxy(Object target, List<MethodInterceptor> chain) {
+    private Object getProxy(Object target, List<MethodInterceptor> chain) {
         return Proxy.newProxyInstance(AopTest.class.getClassLoader(), UserServiceImpl.class.getInterfaces(), new InvocationHandler() {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
@@ -43,7 +46,7 @@ public class AopTest {
         });
     }
 
-    private static List<MethodInterceptor> buildInterceptorChain() {
+    private List<MethodInterceptor> buildInterceptorChain() {
         List<MethodInterceptor> chain = new ArrayList<>();
         chain.add(new MethodInterceptor() {
             @Override
