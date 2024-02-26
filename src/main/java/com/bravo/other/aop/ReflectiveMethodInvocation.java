@@ -6,6 +6,9 @@ import lombok.Data;
 import java.lang.reflect.Method;
 import java.util.List;
 
+/**
+ * 类似Filter模式中的FilterChain：将方法调用不断委托到下一个Interceptor
+ */
 @Data
 public class ReflectiveMethodInvocation implements MethodInvocation {
 
