@@ -27,7 +27,7 @@ public class AopTest {
     }
 
     private static Object getProxy(Object target, List<MethodInterceptor> chain) {
-        Object o = Proxy.newProxyInstance(AopTest.class.getClassLoader(), UserServiceImpl.class.getInterfaces(), new InvocationHandler() {
+        return Proxy.newProxyInstance(AopTest.class.getClassLoader(), UserServiceImpl.class.getInterfaces(), new InvocationHandler() {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
                 Class<?> targetClass = target.getClass();
@@ -41,7 +41,6 @@ public class AopTest {
                 }
             }
         });
-        return o;
     }
 
     private static List<MethodInterceptor> buildInterceptorChain() {
