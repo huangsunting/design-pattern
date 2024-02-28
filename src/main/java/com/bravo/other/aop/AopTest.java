@@ -30,7 +30,7 @@ public class AopTest {
     }
 
     private Object getProxy(Object target, List<MethodInterceptor> chain) {
-        return Proxy.newProxyInstance(AopTest.class.getClassLoader(), UserServiceImpl.class.getInterfaces(), new InvocationHandler() {
+        return Proxy.newProxyInstance(target.getClass().getClassLoader(), target.getClass().getInterfaces(), new InvocationHandler() {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
                 Class<?> targetClass = target.getClass();
