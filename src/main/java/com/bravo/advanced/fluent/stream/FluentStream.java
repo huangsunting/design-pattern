@@ -47,8 +47,7 @@ public interface FluentStream<T> {
 
     List<T> toList();
 
-    <K, R> Map<K, R> toMap(Function<? super T, ? extends K> keyMapper,
-                           Function<? super T, ? extends R> valueMapper);
+    <K, R> Map<K, R> toMap(Function<? super T, ? extends K> keyMapper, Function<? super T, ? extends R> valueMapper);
 
     void forEach(Consumer<? super T> action);
 }
