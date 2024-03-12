@@ -38,7 +38,7 @@ public class BeanFactoryTest {
     public void testPrototype() {
         Person person1 = beanFactory.getBean("person", Person.class);
         Person person2 = beanFactory.getBean("person", Person.class);
-        Assertions.assertEquals(person1, person2);
+        Assertions.assertNotEquals(person1, person2);
     }
 
     @Test
