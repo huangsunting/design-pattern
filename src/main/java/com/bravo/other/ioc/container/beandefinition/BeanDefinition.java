@@ -19,6 +19,7 @@ public class BeanDefinition {
     private Class<?> beanClass;
     private boolean singleton = true;
     private boolean prototype = false;
+    private boolean lazyInit = false;
     private PropertyValues propertyValues;
 
     public BeanDefinition(Class<?> beanClass) {
@@ -49,6 +50,14 @@ public class BeanDefinition {
 
     public boolean isPrototype() {
         return this.prototype;
+    }
+
+    public void setLazyInit(boolean b) {
+        lazyInit = b;
+    }
+
+    public boolean isLazyInit() {
+        return lazyInit;
     }
 
     public PropertyValues getPropertyValues() {

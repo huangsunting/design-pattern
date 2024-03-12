@@ -142,4 +142,13 @@ public class BeanFactory {
             }
         }
     }
+
+    public void preInstantiateSingletons() {
+        beanDefinitionMap.forEach((beanName, beanDefinition) -> {
+            // 单例 && 非延迟加载的bean，提前实例化
+            if (beanDefinition.isSingleton() && !beanDefinition.isLazyInit()) {
+                getBean(beanName);
+            }
+        });
+    }
 }
