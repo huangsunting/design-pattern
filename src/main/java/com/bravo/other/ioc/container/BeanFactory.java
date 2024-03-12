@@ -4,7 +4,6 @@ import com.bravo.other.ioc.container.annotation.Autowired;
 import com.bravo.other.ioc.container.beandefinition.BeanDefinition;
 import com.bravo.other.ioc.container.beandefinition.PropertyValues;
 import org.apache.commons.beanutils.BeanUtils;
-import org.springframework.beans.BeansException;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -127,7 +126,7 @@ public class BeanFactory {
     }
 
     @SuppressWarnings("unchecked")
-    public <T> T getBean(String name, Class<T> requiredType) throws BeansException {
+    public <T> T getBean(String name, Class<T> requiredType) {
         return ((T) getBean(name));
     }
 
