@@ -20,13 +20,13 @@ public class Book {
     }
 
     public static GenreAdder builder() {
-        // fn1：接收genre，返回fn1
+        // GenreAdder：接收genre，返回AuthorAdder
         return genre -> {
-            // fn2：接收author，返回fn2
+            // AuthorAdder：接收author，返回TitleAdder
             return author -> {
-                // fn3：接收title发，返回fn3
+                // TitleAdder：接收title发，返回LocalDateAdder
                 return title -> {
-                    // fn4：接收localDate，返回Book
+                    // LocalDateAdder：接收localDate，返回Book
                     return publicationDate -> new Book(genre, author, title, publicationDate);
                 };
             };
