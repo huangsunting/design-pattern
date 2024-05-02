@@ -39,7 +39,7 @@ public class SimpleThreadPool {
     }
 
     // 辅助方法
-    public <T> Future<?> submit(Runnable task) {
+    public Future<?> submit(Runnable task) {
         return submit(task, null);
     }
 
