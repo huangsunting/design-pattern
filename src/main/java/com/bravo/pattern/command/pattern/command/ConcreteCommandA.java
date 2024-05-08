@@ -1,7 +1,7 @@
-package com.bravo.pattern.command.command;
+package com.bravo.pattern.command.pattern.command;
 
 
-import com.bravo.pattern.command.receiver.ReceiverA;
+import com.bravo.pattern.command.pattern.receiver.ReceiverA;
 
 public class ConcreteCommandA implements Command {
 

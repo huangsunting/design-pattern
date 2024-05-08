@@ -1,4 +1,4 @@
-package com.bravo.pattern.command.receiver;
+package com.bravo.pattern.command.pattern.receiver;
 
 public class ReceiverB {
     public void receiverMethod() {

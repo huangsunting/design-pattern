@@ -1,9 +1,9 @@
-package com.bravo.pattern.command;
+package com.bravo.pattern.command.pattern;
 
-import com.bravo.pattern.command.command.Command;
-import com.bravo.pattern.command.command.ConcreteCommandA;
-import com.bravo.pattern.command.invoker.Invoker;
-import com.bravo.pattern.command.receiver.ReceiverA;
+import com.bravo.pattern.command.pattern.command.Command;
+import com.bravo.pattern.command.pattern.command.ConcreteCommandA;
+import com.bravo.pattern.command.pattern.invoker.Invoker;
+import com.bravo.pattern.command.pattern.receiver.ReceiverA;
 
 public class CommandTest {
 

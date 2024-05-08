@@ -1,4 +1,4 @@
-package com.bravo.pattern.command.command;
+package com.bravo.pattern.command.pattern.command;
 
 public interface Command {
 

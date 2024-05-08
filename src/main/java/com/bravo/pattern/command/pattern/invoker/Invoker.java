@@ -1,6 +1,6 @@
-package com.bravo.pattern.command.invoker;
+package com.bravo.pattern.command.pattern.invoker;
 
-import com.bravo.pattern.command.command.Command;
+import com.bravo.pattern.command.pattern.command.Command;
 
 public class Invoker {
 
