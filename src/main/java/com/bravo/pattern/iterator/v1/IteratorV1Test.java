@@ -8,7 +8,7 @@ import com.bravo.pattern.iterator.v1.iterator.Iterator;
 
 
 /**
- * 内部类实现迭代器
+ * V1版本：迭代器集成在容器内部，可以通过container.iterator()方法直接获取现成的Iterator进行元素遍历，屏蔽具体的数据结构。
  */
 public class IteratorV1Test {
 

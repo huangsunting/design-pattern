@@ -2,6 +2,10 @@ package com.bravo.pattern.iterator.v3.container;
 
 import lombok.Getter;
 
+/**
+ * V3版本中，容器与迭代器也是分离的，但不同的是V2是容器组合迭代器，而V3是迭代器组合容器。
+ * 具体差异请比对V2和V3的测试用例。
+ */
 public class BinarySearchTree<E extends Comparable<E>> {
     /**
      * 为了让迭代器能够遍历容器内部的元素，需要将root节点暴露出去，这破坏了容器的封装性
@@ -17,10 +21,6 @@ public class BinarySearchTree<E extends Comparable<E>> {
         root = insertRec(root, data);
     }
 
-    public boolean search(E data) {
-        return searchRec(root, data);
-    }
-
     private Node<E> insertRec(Node<E> root, E data) {
         if (root == null) {
             root = new Node<E>(data);
@@ -34,6 +34,10 @@ public class BinarySearchTree<E extends Comparable<E>> {
         }
 
         return root;
+    }
+
+    public boolean search(E data) {
+        return searchRec(root, data);
     }
 
     private boolean searchRec(Node<E> root, E data) {

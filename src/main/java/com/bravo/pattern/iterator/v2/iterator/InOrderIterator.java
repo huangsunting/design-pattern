@@ -4,6 +4,9 @@ import com.bravo.pattern.iterator.v2.container.Node;
 
 import java.util.Stack;
 
+/**
+ * 从BinarySearchTree独立出来的迭代器
+ */
 public class InOrderIterator<E extends Comparable<E>> implements Iterator<E> {
     private final Stack<Node<E>> stack;
 

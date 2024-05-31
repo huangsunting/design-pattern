@@ -5,6 +5,9 @@ import com.bravo.pattern.iterator.v3.container.BinarySearchTree;
 
 import java.util.Stack;
 
+/**
+ * 独立出来的迭代器，接收一个BinarySearchTree（容器），对其进行遍历
+ */
 public class InOrderIterator<E extends Comparable<E>> implements Iterator<E> {
     private final Stack<Node<E>> stack;
 

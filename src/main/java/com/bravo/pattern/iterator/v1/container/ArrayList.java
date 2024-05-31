@@ -7,7 +7,9 @@ import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 /**
- * 底层是数组
+ * 模拟ArrayList实现，底层是数组。由两部分构成：
+ * - ArrayList容器相关实现
+ * - ArrayList迭代器相关实现
  */
 public class ArrayList<E> implements Iterable<E> {
     private static final int DEFAULT_CAPACITY = 10;
@@ -60,6 +62,8 @@ public class ArrayList<E> implements Iterable<E> {
             elementData = Arrays.copyOf(elementData, newCapacity);
         }
     }
+
+    // ------- 以下是ArrayList迭代器实现 -------
 
     @Override
     public Iterator<E> iterator() {

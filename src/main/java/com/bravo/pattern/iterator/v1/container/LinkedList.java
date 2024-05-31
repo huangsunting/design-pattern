@@ -6,7 +6,9 @@ import com.bravo.pattern.iterator.v1.iterator.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * 底层是链表
+ * 模拟LinkedList实现，底层是链表。由两部分构成：
+ * - LinkedList容器相关实现
+ * - LinkedList迭代器相关实现
  */
 public class LinkedList<E> implements Iterable<E> {
     private int size;
@@ -108,6 +110,8 @@ public class LinkedList<E> implements Iterable<E> {
             prev = null;
         }
     }
+
+    // ------- 以下是LinkedList迭代器实现 -------
 
     @Override
     public Iterator<E> iterator() {

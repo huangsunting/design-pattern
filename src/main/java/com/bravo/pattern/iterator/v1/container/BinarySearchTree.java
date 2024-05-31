@@ -5,6 +5,11 @@ import com.bravo.pattern.iterator.v1.iterator.Iterator;
 
 import java.util.Stack;
 
+/**
+ * 模拟BinarySearchTree实现，底层是树。由两部分构成：
+ * - BinarySearchTree容器相关实现
+ * - BinarySearchTree迭代器相关实现
+ */
 public class BinarySearchTree<E extends Comparable<E>> implements Iterable<E> {
     private Node root; // 根节点
 
@@ -69,6 +74,8 @@ public class BinarySearchTree<E extends Comparable<E>> implements Iterable<E> {
             right = null;
         }
     }
+
+    // ------- 以下是BinarySearchTree迭代器实现 -------
 
     @Override
     public Iterator<E> iterator() {

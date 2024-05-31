@@ -5,7 +5,8 @@ import com.bravo.pattern.iterator.v2.iterator.Iterator;
 import com.bravo.pattern.iterator.v2.iteratorfactory.IteratorFactory;
 
 /**
- * 通过工厂方法模式将迭代器抽取出去，自由组合
+ * V2版本尝试将 容器 和 迭代器 分离（通过工厂方法模式），允许容器通过组合的形式切换迭代器。
+ * 所以，在这个版本的BinarySearchTree中，并不包含具体的迭代器实现。
  */
 public class BinarySearchTree<E extends Comparable<E>> implements Iterable<E> {
     private Node<E> root;
@@ -19,15 +20,6 @@ public class BinarySearchTree<E extends Comparable<E>> implements Iterable<E> {
     public void insert(E data) {
         // 插入新元素，返回根节点
         root = insertRec(root, data);
-    }
-
-    public boolean search(E data) {
-        return searchRec(root, data);
-    }
-
-    @Override
-    public Iterator<E> iterator() {
-        return iteratorFactory.createIterator(root);
     }
 
     private Node<E> insertRec(Node<E> root, E data) {
@@ -48,6 +40,10 @@ public class BinarySearchTree<E extends Comparable<E>> implements Iterable<E> {
         return root;
     }
 
+    public boolean search(E data) {
+        return searchRec(root, data);
+    }
+
     private boolean searchRec(Node<E> root, E data) {
         if (root == null) {
             return false;
@@ -65,5 +61,10 @@ public class BinarySearchTree<E extends Comparable<E>> implements Iterable<E> {
             // 递归：数据比当前节点大，往右继续比较
             return searchRec(root.right, data);
         }
+    }
+
+    @Override
+    public Iterator<E> iterator() {
+        return iteratorFactory.createIterator(root);
     }
 }
