@@ -13,23 +13,23 @@ public class ApplicationContext {
     // 组合BeanFactory
     private BeanFactory beanFactory;
 
-    public ApplicationContext(String... backPackages) {
-        refresh(backPackages);
+    public ApplicationContext(String... basePackages) {
+        refresh(basePackages);
     }
 
-    private void refresh(String... backPackages) {
+    private void refresh(String... basePackages) {
         // 创建BeanFactory，并加载BeanDefinition
-        beanFactory = obtainFreshBeanFactory(backPackages);
+        beanFactory = obtainFreshBeanFactory(basePackages);
 
         // 提前实例化单例bean
         beanFactory.preInstantiateSingletons();
     }
 
-    private BeanFactory obtainFreshBeanFactory(String... backPackages) {
+    private BeanFactory obtainFreshBeanFactory(String... basePackages) {
         // 其实就是把BeanFactoryTest中的@BeforeEach的逻辑搬到这里
         BeanFactory beanFactory = new BeanFactory();
         ClassPathBeanDefinitionScanner scanner = new ClassPathBeanDefinitionScanner(beanFactory);
-        scanner.doScan(backPackages);
+        scanner.doScan(basePackages);
         return beanFactory;
     }
 
