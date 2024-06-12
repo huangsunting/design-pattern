@@ -32,7 +32,7 @@ public class OrderService {
 
     private void notifyObservers(String product) {
         for (Observer observer : observers) {
-            observer.update("18257555358", product);
+            observer.update("18257555555", product);
         }
     }
 
