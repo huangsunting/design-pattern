@@ -2,6 +2,10 @@ package com.bravo.advanced.generics.arrayoptimize.v2;
 
 import java.util.Arrays;
 
+/**
+ * 对数组进行封装，改善数组使用方式，同时支持自动扩容。
+ * 缺点是只能支持String元素。
+ */
 public class DynamicStringArrayTest {
 
     public static void main(String[] args) {

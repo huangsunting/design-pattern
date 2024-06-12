@@ -2,6 +2,9 @@ package com.bravo.advanced.generics.arrayoptimize.v3;
 
 import java.util.Arrays;
 
+/**
+ * 泛型数组，支持任意类型元素。也就是JDK中ArrayList的前身。
+ */
 public class DynamicArrayTest {
 
     public static void main(String[] args) {
