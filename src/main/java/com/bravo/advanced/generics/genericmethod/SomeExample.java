@@ -7,8 +7,8 @@ import java.util.Objects;
  */
 public class SomeExample {
 
-    public void otherMethod() {
-        System.out.println("我是其他方法");
+    public void someMethod() {
+        System.out.println("我是普通方法");
     }
 
     /*========== 以下引入泛型方法 ==========*/
