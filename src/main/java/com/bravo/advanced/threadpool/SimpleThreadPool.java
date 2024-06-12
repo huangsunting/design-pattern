@@ -1,9 +1,12 @@
 package com.bravo.advanced.threadpool;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
 
+@Slf4j
 public class SimpleThreadPool {
 
     /**
@@ -41,7 +44,7 @@ public class SimpleThreadPool {
             // 任务队列满了则阻塞提交
             workQueue.put(command);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            log.error("任务提交失败", e);
         }
     }
 
@@ -56,7 +59,7 @@ public class SimpleThreadPool {
                     Runnable task = workQueue.take();
                     task.run();
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    log.error("任务获取失败", e);
                 }
             }
         }

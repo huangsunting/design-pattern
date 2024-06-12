@@ -1,7 +1,9 @@
 package com.bravo.pattern.prototype.javacloneimpl;
 
 import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @ToString
 public class Circle implements Cloneable { // 1.直接实现JDK的Cloneable，不需要另外定义Prototype接口或抽象类
 
@@ -19,7 +21,7 @@ public class Circle implements Cloneable { // 1.直接实现JDK的Cloneable，�
         try {
             return (Circle) super.clone(); // 2.调用super.clone()完成对象复制
         } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
+            log.error("clone error", e);
             return null;
         }
     }

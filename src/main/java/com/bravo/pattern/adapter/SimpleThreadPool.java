@@ -1,5 +1,7 @@
 package com.bravo.pattern.adapter;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
@@ -13,6 +15,7 @@ import java.util.concurrent.RunnableFuture;
  * 通过RunnableAdapter将Runnable类型的任务转为Callable类型
  * 属于对象适配器（组合）
  */
+@Slf4j
 public class SimpleThreadPool {
 
     private final BlockingQueue<Runnable> workQueue;
@@ -34,7 +37,7 @@ public class SimpleThreadPool {
         try {
             workQueue.put(command);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            log.error("任务提交失败", e);
         }
     }
 
@@ -67,7 +70,7 @@ public class SimpleThreadPool {
                     Runnable task = workQueue.take();
                     task.run();
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    log.error("任务获取失败", e);
                 }
             }
         }

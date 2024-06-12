@@ -18,11 +18,12 @@ public class SimpleThreadPoolTest {
             public String call() throws Exception {
                 try {
                     TimeUnit.SECONDS.sleep(3);
+                    System.out.println("Callable over");
+                    return "Hello World";
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    System.out.println("Callable exception");
+                    return "";
                 }
-                System.out.println("Callable over");
-                return "Hello World";
             }
         });
 

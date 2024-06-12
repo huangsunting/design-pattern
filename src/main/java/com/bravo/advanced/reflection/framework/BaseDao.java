@@ -1,6 +1,7 @@
 package com.bravo.advanced.reflection.framework;
 
 import cn.hutool.core.util.StrUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -10,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@Slf4j
 public class BaseDao<T> {
 
     /********* 数据库相关初始化（未来可以抽取出去）*********/
@@ -57,7 +59,7 @@ public class BaseDao<T> {
                 }
             }
         } catch (IllegalAccessException e) {
-            e.printStackTrace();
+            log.error("实体类字段属性设置错误, bean:{}", bean);
             throw new IllegalArgumentException("实体类字段属性设置错误");
         }
         String columns = columnBuilder.deleteCharAt(columnBuilder.length() - 1).toString();

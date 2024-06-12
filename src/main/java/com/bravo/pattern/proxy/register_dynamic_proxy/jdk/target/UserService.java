@@ -20,7 +20,7 @@ public class UserService implements IUserService {
         try {
             TimeUnit.SECONDS.sleep(seconds);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            log.error("sleep exception", e);
         }
     }
 }
