@@ -1,8 +1,8 @@
 package com.bravo.advanced.annotation.junit.parse;
 
-import com.bravo.advanced.annotation.junit.define.MyAfter;
-import com.bravo.advanced.annotation.junit.define.MyBefore;
-import com.bravo.advanced.annotation.junit.define.MyTest;
+import com.bravo.advanced.annotation.junit.define.After;
+import com.bravo.advanced.annotation.junit.define.Before;
+import com.bravo.advanced.annotation.junit.define.Test;
 import com.bravo.advanced.annotation.junit.use.UserTest;
 
 import java.lang.reflect.Method;
@@ -10,10 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 这个就是注解三部曲中最重要的：读取并解析
- * 相当于我们使用Junit时看不见的那部分（在隐秘的角落里帮我们执行标注了@Test的方法）
+ * 注解三部曲
+ * - 定义注解（@Test/@Before/@After）
+ * - 使用注解（UserTest）
+ * - 解析注解（JunitFrameWork）
+ * 本来应该由UserTest触发测试案例，但这毕竟不是真的Junit框架，需要自己执行JunitFrameWork#main
  */
-public class MyJunitFrameWork {
+public class JunitFrameWork {
 
     public static void main(String[] args) throws Exception {
         // 1.反射创建测试案例对象
@@ -23,34 +26,34 @@ public class MyJunitFrameWork {
         // 2.获取UserTest类中所有公共方法
         Method[] methods = clazz.getMethods();
 
-        // 3.迭代出每一个Method对象，判断哪些方法上使用了@MyBefore/@MyAfter/@MyTest注解
+        // 3.迭代出每一个Method对象，判断哪些方法上使用了@Before/@After/@Test注解
         List<Method> myBeforeList = new ArrayList<>();
         List<Method> myAfterList = new ArrayList<>();
         List<Method> myTestList = new ArrayList<>();
         for (Method method : methods) {
-            if (method.isAnnotationPresent(MyBefore.class)) {
-                // 存储使用了@MyBefore注解的方法对象
+            if (method.isAnnotationPresent(Before.class)) {
+                // 存储使用了@Before注解的方法对象
                 myBeforeList.add(method);
-            } else if (method.isAnnotationPresent(MyTest.class)) {
-                // 存储使用了@MyTest注解的方法对象
+            } else if (method.isAnnotationPresent(Test.class)) {
+                // 存储使用了@Test注解的方法对象
                 myTestList.add(method);
-            } else if (method.isAnnotationPresent(MyAfter.class)) {
-                // 存储使用了@MyAfter注解的方法对象
+            } else if (method.isAnnotationPresent(After.class)) {
+                // 存储使用了@After注解的方法对象
                 myAfterList.add(method);
             }
         }
 
         // 执行待测试方法：myTestList
         for (Method testMethod : myTestList) {
-            // 先执行@MyBefore
+            // 先执行@Before
             for (Method beforeMethod : myBeforeList) {
                 beforeMethod.invoke(obj);
             }
 
-            // 再执行@MyTest
+            // 再执行@Test
             testMethod.invoke(obj);
 
-            // 最后执行@MyAfter
+            // 最后执行@After
             for (Method afterMethod : myAfterList) {
                 afterMethod.invoke(obj);
             }
