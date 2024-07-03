@@ -6,7 +6,6 @@ import cn.hutool.core.lang.Pair;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.TimeUnit;
 
 public class LocalTimedCache<T> implements Cache<T> {
     // 双层结构：key => (value => expiration)
@@ -44,19 +43,4 @@ public class LocalTimedCache<T> implements Cache<T> {
         }
     }
 
-    public static void main(String[] args) throws InterruptedException {
-        LocalTimedCache<String> cache = new LocalTimedCache<>();
-        cache.put("key", "value");
-        cache.put("exKey", "exValue", Duration.ofSeconds(1));
-
-        System.out.println(cache.get("a"));     // null
-        System.out.println(cache.get("key"));   // value
-        System.out.println(cache.get("exKey")); // exValue
-
-        TimeUnit.SECONDS.sleep(2);
-
-        System.out.println(cache.get("a"));     // null
-        System.out.println(cache.get("key"));   // value
-        System.out.println(cache.get("exKey")); // null
-    }
 }
