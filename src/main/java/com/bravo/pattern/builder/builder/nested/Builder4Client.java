@@ -1,7 +1,5 @@
 package com.bravo.pattern.builder.builder.nested;
 
-import com.bravo.pattern.builder.builder.nested.Order;
-
 import java.time.LocalDateTime;
 
 /**
