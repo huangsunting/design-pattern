@@ -32,6 +32,9 @@ public class Order {
         private LocalDateTime orderTime;
         private Address.AddressBuilder addressBuilder = Address.builder();
 
+        private OrderBuilder() {
+        }
+
         public OrderBuilder withOrderNumber(String orderNumber) {
             this.orderNumber = orderNumber;
             return this;

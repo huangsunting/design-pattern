@@ -11,7 +11,7 @@ public class Address {
     private final String city;
     private final String area;
 
-    public Address(AddressBuilder builder) {
+    private Address(AddressBuilder builder) {
         this.province = builder.province;
         this.city = builder.city;
         this.area = builder.area;
@@ -25,6 +25,9 @@ public class Address {
         private String province;
         private String city;
         private String area;
+
+        private AddressBuilder() {
+        }
 
         public AddressBuilder province(String province) {
             this.province = province;
