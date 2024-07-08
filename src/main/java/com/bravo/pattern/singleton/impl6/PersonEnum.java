@@ -1,5 +1,8 @@
 package com.bravo.pattern.singleton.impl6;
 
+import lombok.Getter;
+
+@Getter
 public enum PersonEnum {
 
     STUDENT("孙悟饭", 18) {

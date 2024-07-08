@@ -1,5 +1,8 @@
 package com.bravo.pattern.singleton.impl5;
 
+import lombok.Getter;
+
+@Getter
 public class Person {
 
     private final String name;

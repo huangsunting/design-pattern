@@ -1,9 +1,12 @@
 package com.bravo.pattern.singleton.impl4;
 
+import lombok.Getter;
+
 /**
  * 此种写法仍然有缺陷。
  * 除了impl5提到的volatile，还可以使用静态内部类：把鼠标移到第19行if关键字，跟随IDEA提示完成优化即可。
  */
+@Getter
 public class Person {
 
     private final String name;
