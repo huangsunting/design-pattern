@@ -1,10 +1,9 @@
-package com.bravo.pattern.builder.builder.nested;
+package com.bravo.pattern.builder.builder.nested2;
 
 import lombok.Getter;
 import lombok.ToString;
 
 import java.time.LocalDateTime;
-import java.util.function.Function;
 
 /**
  * 嵌套Builder
@@ -20,7 +19,7 @@ public class Order {
     private Order(OrderBuilder builder) {
         this.orderNumber = builder.orderNumber;
         this.orderTime = builder.orderTime;
-        this.address = builder.addressBuilder.build();
+        this.address = builder.address;
     }
 
     public static OrderBuilder empty() {
@@ -30,7 +29,7 @@ public class Order {
     public static class OrderBuilder {
         private String orderNumber;
         private LocalDateTime orderTime;
-        private Address.AddressBuilder addressBuilder = Address.builder();
+        private Address address;
 
         private OrderBuilder() {
         }
@@ -45,10 +44,9 @@ public class Order {
             return this;
         }
 
-        public OrderBuilder shippedTo(Function<Address.AddressBuilder, Address.AddressBuilder> action) {
-            // 也可以写成Consumer<Address.AddressBuilder> action
-            // 这里用Function仅仅为了类型约束，强制客户程序返回Builder，禁止外部调用build()，因为我觉得挺丑的
-            this.addressBuilder = action.apply(addressBuilder);
+        // 简化了这一步的复杂度
+        public OrderBuilder shippedTo(String province, String city, String area) {
+            this.address = new Address(province, city, area);
             return this;
         }
 
