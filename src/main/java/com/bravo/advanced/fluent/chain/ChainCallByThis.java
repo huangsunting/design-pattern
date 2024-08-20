@@ -5,6 +5,7 @@ import lombok.ToString;
 
 public class ChainCallByThis {
     public static void main(String[] args) {
+        // 最常见的一种链式调用，可类比Lombok插件的@Accessors(chain = true)
         Person person = new Person().setName("bravo1988").setAge(18).setMoney(1000.0);
         System.out.println(person);
     }

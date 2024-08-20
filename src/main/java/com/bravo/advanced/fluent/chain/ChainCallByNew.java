@@ -5,6 +5,7 @@ import lombok.ToString;
 
 public class ChainCallByNew {
     public static void main(String[] args) {
+        // 仅做举例，一般不会使用这种形式，因为会生成很多临时对象，影响性能
         Person person = new Person().setName("bravo1988").setAge(18).setMoney(1000.0);
         System.out.println(person);
     }
