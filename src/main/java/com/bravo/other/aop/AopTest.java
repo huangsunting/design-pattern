@@ -17,6 +17,9 @@ import java.util.List;
  */
 public class AopTest {
 
+    /**
+     * 注意，打断点观察时，IDEA为了生成对象的可读内容，会调用该对象的toString()，可能导致打印结果不符合预期，这是正常的。
+     */
     @Test
     public void test() {
         // 这是增强逻辑
