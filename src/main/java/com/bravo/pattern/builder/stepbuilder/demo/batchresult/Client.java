@@ -14,8 +14,8 @@ import java.util.concurrent.ThreadLocalRandom;
 /**
  * 测试BatchResult
  * 设计思路请移步至：
- * - 小册 设计模式那些事儿 的《旁边的同事，特别爱用设计模式》
- * - 知乎 bravo1988 《旁边的同事，特别爱用设计模式》
+ * - 小册 设计模式那些事儿 的《旁边工位的同事，特别爱用设计模式》
+ * - 知乎 bravo1988 《旁边工位的同事，特别爱用设计模式》
  */
 public class Client {
 
