@@ -21,15 +21,20 @@ public class Client {
 
     public static void main(String[] args) {
         List<Student> students = Arrays.asList(
-                new Student("张三"),
-                new Student("李四"),
-                new Student("王五")
+                new Student(1L, "张三"),
+                new Student(2L, "李四"),
+                new Student(3L, "王五")
         );
         String tag = "《设计模式那些事儿》的读者";
 
         Client client = new Client();
         BatchResult<Student> result = client.batchAttachTagForStudent(students, tag);
+        System.out.println("是否全部成功：" + result.isAllCompleted());
         System.out.println(JSON.toJSONString(result));
+
+        // 假设需要通过RPC暴露当前方法，而RPC的返回值是StudentDTO，可以使用内置的convert进行转换
+        BatchResult<StudentDTO> rpcResult = result.convert(student -> new StudentDTO(student.getId()));
+        System.out.println(JSON.toJSONString(rpcResult));
     }
 
     /**
@@ -66,6 +71,13 @@ public class Client {
     @Data
     @AllArgsConstructor
     static class Student {
+        private Long id;
         private String name;
+    }
+
+    @Data
+    @AllArgsConstructor
+    static class StudentDTO {
+        private Long id;
     }
 }
