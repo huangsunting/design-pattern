@@ -1,4 +1,4 @@
-package com.bravo.pattern.builder.stepbuilder.httprequest;
+package com.bravo.pattern.builder.stepbuilder.demo.httprequest;
 
 public class Client {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.bravo.pattern.builder.stepbuilder.httprequest;
+package com.bravo.pattern.builder.stepbuilder.demo.httprequest;
 
 import lombok.Getter;
 
