@@ -5,6 +5,7 @@ import cn.hutool.core.util.StrUtil;
 import com.alibaba.fastjson.JSON;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,9 +18,10 @@ import java.util.concurrent.ThreadLocalRandom;
  * - 小册 设计模式那些事儿 的《旁边工位的同事，特别爱用设计模式》
  * - 知乎 bravo1988 《旁边工位的同事，特别爱用设计模式》
  */
-public class Client {
+public class BatchResultTest {
 
-    public static void main(String[] args) {
+    @Test
+    public void test() {
         List<Student> students = Arrays.asList(
                 new Student(1L, "张三"),
                 new Student(2L, "李四"),
@@ -27,8 +29,7 @@ public class Client {
         );
         String tag = "《设计模式那些事儿》的读者";
 
-        Client client = new Client();
-        BatchResult<Student> result = client.batchAttachTagForStudent(students, tag);
+        BatchResult<Student> result = this.batchAttachTagForStudent(students, tag);
         System.out.println("是否全部成功：" + result.isAllCompleted());
         System.out.println(JSON.toJSONString(result));
 
