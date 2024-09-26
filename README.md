@@ -1,5 +1,8 @@
 [《设计模式那些事儿》](https://zhuanlan.zhihu.com/p/661886277)配套代码
 
+- [Gitee仓库](https://gitee.com/bravo1988/design-pattern)
+- [GitHub仓库](https://github.com/huangsunting/design-pattern)
+
 <img src="https://pic1.zhimg.com/v2-9cce37020b31bd98089c5eedb40b1254" width = "200" height = "200" alt="图片名称"/>
 
 ## 目录
