@@ -42,7 +42,7 @@ public class BatchResultTest {
      * 为用户批量打标
      */
     private BatchResult<Student> batchAttachTagForStudent(List<Student> students, String tag) {
-        if (CollUtil.isEmpty(students) && StrUtil.isBlank(tag)) {
+        if (CollUtil.isEmpty(students) || StrUtil.isBlank(tag)) {
             throw new IllegalArgumentException("参数错误");
         }
 
