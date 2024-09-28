@@ -59,7 +59,7 @@ public class BatchResultTest {
             completedStudents.add(student);
         }
         // 批量操作成功
-        return BatchResult.builder(Student.class)
+        return BatchResult.<Student>builder() // 和MyBatis-Plus一样，泛型类型可以这么指定，也可以向上面一样通过入参指定
                 .finished()
                 .result(students.size(), completedStudents)
                 .build();
