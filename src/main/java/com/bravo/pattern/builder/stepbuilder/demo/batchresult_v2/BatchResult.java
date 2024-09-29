@@ -18,7 +18,7 @@ public class BatchResult<T> implements Serializable {
 
     private Data<T> data;
     private Integer errorCode;
-    private String errMsg;
+    private String errorMsg;
 
     @Getter
     @NoArgsConstructor
@@ -64,19 +64,19 @@ public class BatchResult<T> implements Serializable {
                                 data.interruptedMsg
                         ),
                 errorCode,
-                errMsg
+                errorMsg
         );
     }
 
-    public static <T> BatchResult<T> failed(String failureReason) {
-        return failed(-1, failureReason);
+    public static <T> BatchResult<T> failed(String errorMsg) {
+        return failed(-1, errorMsg);
     }
 
-    public static <T> BatchResult<T> failed(Integer failureCode, String failureReason) {
+    public static <T> BatchResult<T> failed(Integer errorCode, String errorMsg) {
         return new BatchResult<>(
                 null,
-                failureCode,
-                failureReason
+                errorCode,
+                errorMsg
         );
     }
 
@@ -93,10 +93,10 @@ public class BatchResult<T> implements Serializable {
     private BatchResult() {
     }
 
-    private BatchResult(Data<T> data, Integer errorCode, String errMsg) {
+    private BatchResult(Data<T> data, Integer errorCode, String errorMsg) {
         this.data = data;
         this.errorCode = errorCode;
-        this.errMsg = errMsg;
+        this.errorMsg = errorMsg;
     }
 
     public interface ReasonStep<T> {
