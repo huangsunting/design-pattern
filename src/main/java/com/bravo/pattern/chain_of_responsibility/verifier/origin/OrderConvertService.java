@@ -8,7 +8,7 @@ public class OrderConvertService {
         if (request.getUserId() == null) {
             throw new IllegalArgumentException("用户未登录");
         }
-        if (request.getOrderNo() == null || request.getOrderNo().trim().equals("")) {
+        if (request.getOrderNo() == null || request.getOrderNo().trim().isEmpty()) {
             throw new IllegalArgumentException("订单号不能为空");
         }
         if (request.getChannel() == null) {

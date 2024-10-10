@@ -23,7 +23,7 @@ public class OrderConvertRequest {
         if (this.getUserId() == null) {
             throw new IllegalArgumentException("用户未登录");
         }
-        if (this.getOrderNo() == null || this.getOrderNo().trim().equals("")) {
+        if (this.getOrderNo() == null || this.getOrderNo().trim().isEmpty()) {
             throw new IllegalArgumentException("订单号不能为空");
         }
         if (this.getChannel() == null) {
