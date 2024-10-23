@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js中的promise</title>
+</head>
+
+<body>
+<!-- 在浏览器打开，观察console -->
+<script>
+    // 测试：testAsyncTaskResolved
+    const p = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            // resolve('success')
+            reject('error')
+        }, 2000)
+    })
+
+    console.log('同步代码(1)');
+
+    p.then(result => {
+        console.log('异步操作执行结果:' + result);
+    }).catch(error => {
+        console.log('异步操作执行结果:', error);
+    })
+
+    console.log('同步代码(2)');
+
+    // 测试2：链式调用（Java版Promise暂不支持）
+    // new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     resolve('浙江省')
+    //   }, 2000)
+    // })
+    //   .then(result1 => {
+    //     console.log('async task1 callback:' + result1);
+    //     return new Promise((resolve, reject) => {
+    //       setTimeout(() => {
+    //         resolve(result1 + '-温州市')
+    //       }, 2000)
+    //     })
+    //   })
+    //   .then(result2 => {
+    //     console.log('async task2 callback:' + result2);
+    //     return new Promise((resolve, reject) => {
+    //       setTimeout(() => {
+    //         resolve(result2 + '-苍南县')
+    //       }, 2000)
+    //     })
+    //   })
+    //   .then(finalResult => {
+    //     console.log('async task3 callback:' + finalResult);
+    //   })
+    //   .catch(error => {
+    //     console.log('error...');
+    //   })
+
+</script>
+</body>
+
+</html>

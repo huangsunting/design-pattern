@@ -1,4 +1,4 @@
-package com.bravo.other.promise;
+package com.bravo.other.promise.java;
 
 import lombok.Getter;
 
