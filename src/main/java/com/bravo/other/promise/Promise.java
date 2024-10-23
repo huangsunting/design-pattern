@@ -1,4 +1,4 @@
-package com.bravo.other.promise.v1;
+package com.bravo.other.promise;
 
 import lombok.Getter;
 
@@ -6,6 +6,9 @@ import lombok.Getter;
  * 仿写js的Promise，极简版
  * - 不支持链式处理多个任务
  * - 仅支持处理异步任务，传入同步任务会导致结果无法回调
+ * 要想支持上面两个功能，特别是链式调用（包括resolve和reject的正确触发then和catching），需要花很大功夫。
+ * 当前这个案例想要告诉大家的是：对于异步结果的获取，回调是一种很不错的选择。
+ * 比如开启任务前，传入resolve和reject，结束后由任务触发回调。相当于临别前我给你一个手机，想我了就用这个手机把这个讯息传递给我！
  */
 public class Promise {
 
