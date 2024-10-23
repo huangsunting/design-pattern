@@ -10,7 +10,7 @@ import lombok.Getter;
 public class Promise {
 
     /**
-     * 异步结果处理器
+     * 结果处理器
      */
     private ResultHandler resultHandler;
     /**
