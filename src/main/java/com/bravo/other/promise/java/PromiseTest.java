@@ -53,7 +53,8 @@ public class PromiseTest {
     }
 
     /**
-     * 由于这里是另一个线程里的异常，当前线程无法捕获，所以catching逻辑
+     * BUG：由于这里是另一个线程里的异常，当前线程无法捕获，所以catching不起作用
+     * 解释：js的promise可以捕获异常，因为js本质是单线程的，它的setTimeout是通过事件循环实现的，而非多线程
      */
     @Test
     public void testAsyncTaskException() throws InterruptedException {
@@ -64,6 +65,7 @@ public class PromiseTest {
         }).then(result -> {
             log.info("异步操作执行结果:{}", result);
         }).catching(error -> {
+            // 和js的promise不同，这里无法捕获异常
             log.info("异步操作执行结果:{}", error);
         });
 
