@@ -60,18 +60,21 @@ public class TypeReferenceTest {
 
     // 子类继承、或使用匿名对象，都可以获取到参数化类型
     @Getter
-    static class TypeReference<T> {
+    static abstract class TypeReference<T> {
         private final Type type;
 
         public TypeReference() {
+            // test案例中创建的是 TypeReference<T> 匿名对象，所以此处this就是 TypeReference<T> 的一个实例
+            // 那么this.getClass()也就是匿名子类的Class，而最终this.getClass().getGenericSuperclass()得到的就是 TypeReference<T>
             Type superClass = this.getClass().getGenericSuperclass();
+            // 又由于Java会保留继承中的泛型信息，所以这里可以获取 GenericSuperclass 的泛型参数，也就是T，也就是GenericObj<K>整体信息
             type = ((ParameterizedType) superClass).getActualTypeArguments()[0];
         }
     }
 
     @Data
-    static class GenericObj<T> {
-        private T other;
+    static class GenericObj<K> {
+        private K other;
         private String name;
     }
 
