@@ -1,4 +1,4 @@
-package com.bravo.advanced.generics.typereference;
+package com.bravo.advanced.generics.typeerasure;
 
 import org.junit.jupiter.api.Test;
 
