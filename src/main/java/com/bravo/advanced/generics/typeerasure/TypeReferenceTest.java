@@ -8,16 +8,24 @@ import org.junit.jupiter.api.Test;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
+/**
+ * TypeReferenceTest用于论述 “TypeReference为什么这么设计”：提供一种便捷的方式保存类型信息，用于fastjson反序列化目标对象。
+ */
 public class TypeReferenceTest {
 
     @Test
     public void testGetTypeInfo() {
+        // 反序列化简单对象
         // Obj obj = JSON.parseObject("{}", Obj.class);
 
+        // 反序列化泛型对象
         GenericObj<String> genericObj = JSON.parseObject("{}", new TypeReference<GenericObj<String>>() {
         });
     }
 
+    /**
+     * 仿写fastjson
+     */
     static class JSON {
 
         @SneakyThrows
@@ -58,19 +66,25 @@ public class TypeReferenceTest {
         }
     }
 
-    // 子类继承、或使用匿名对象，都可以获取到参数化类型
+    /**
+     * 仿写fastjson的TypeReference
+     *
+     * @param <T> 反序列化目标对象类型
+     */
     @Getter
     static abstract class TypeReference<T> {
         private final Type type;
 
         public TypeReference() {
-            // test案例中创建的是 TypeReference<T> 匿名对象，所以此处this就是 TypeReference<T> 的一个实例
-            // 那么this.getClass()也就是匿名子类的Class，而最终this.getClass().getGenericSuperclass()得到的就是 TypeReference<T>
-            Type superClass = this.getClass().getGenericSuperclass();
+            // 无论继承还是使用匿名对象，创建出来的都是TypeReference的子类实例
+            // this.getClass()得到的事TypeReference子类的Class，this.getClass().getGenericSuperclass()得到则是 TypeReference<T> 自身Class
+            Type typeRefClazz = this.getClass().getGenericSuperclass();
             // 又由于Java会保留继承中的泛型信息，所以这里可以获取 GenericSuperclass 的泛型参数，也就是T，也就是GenericObj<K>整体信息
-            type = ((ParameterizedType) superClass).getActualTypeArguments()[0];
+            type = ((ParameterizedType) typeRefClazz).getActualTypeArguments()[0];
         }
     }
+
+    // ===== 反序列化目标对象：普通对象、泛型对象 =====
 
     @Data
     static class GenericObj<K> {

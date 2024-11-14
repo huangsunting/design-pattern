@@ -6,13 +6,15 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
 /**
- * 思考题：观察test1/2/3的打印结果，你发现了什么？答案放在本类最后面
+ * GenericSuperClassTest用于论述以下观点：
+ * - Java确实存在泛型擦除
+ * - 但Java也支持通过继承的形式保留泛型信息，并提供了与之配套地API用于获取类型信息
+ * - 只能通过GenericSuperClass获取泛型父类的类型信息，因此要想获取当前类的泛型信息，只能向下拓展一个子类，再反过来通过GenericSuperClass
  */
 public class GenericSuperClassTest {
 
     /**
      * 直接实例化
-     * 从ArrayList往上一级，得到GenericSuperClass，也就是 AbstractList
      * 这种情况Java并不会为我们保留类型信息，会在运行时擦除
      */
     @Test
@@ -51,10 +53,15 @@ public class GenericSuperClassTest {
     static abstract class AbstractList<T> {
     }
 
+
+
+    // ======== BaseDAO<T>之所以成立的原因 =======
+
     @Test
     public void testBaseDAO() {
-        UserDAO userDAO = new UserDAO();
-        // userDAO.getClass().getGenericSuperclass()
+        // UserDAO userDAO = new UserDAO();                 // 继承
+        BaseDAO<User> userDAO = new BaseDAO<User>() {       // 匿名对象
+        };
     }
 
     static abstract class BaseDAO<T> {
@@ -75,9 +82,12 @@ public class GenericSuperClassTest {
     static class User {
     }
 }
+
+// 思考题：观察test1/2/3的打印结果，你发现了什么？
+
+// 答案：
 // StringArrayList（继承）和 ArrayList匿名对象，虽然本质上都是继承，但层级有点区别
-// <p>
 // AbstractList
 //  - ArrayList
-//      - 匿名类
+//      - 匿名类，new ArrayList<String>(){}是在ArrayList继承上继承
 //  - StringArrayList
